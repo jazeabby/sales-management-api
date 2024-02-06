@@ -90,7 +90,7 @@ router.post('/:id/customer', authenticateToken, async (req, res) => {
         email:lead.email,
         interests:lead.interests,
       };
-      await Leads.findByIdAndUpdate(req.params.id, {status:"closed"});
+      await Leads.findByIdAndUpdate(req.params.id, {status:"completed"});
       const customer = await Customer.create(data);      
     }
     // const customers = await Customer.find({lead_id:lead._id});
